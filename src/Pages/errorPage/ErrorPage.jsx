@@ -6,7 +6,7 @@ const ErrorPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="text-center max-w-md">
         {/* Error Code */}
-        <h1 className="text-8xl font-bold text-indigo-600">404</h1>
+        <h1 className="text-8xl font-bold text-[#23BE0A]">404</h1>
 
         {/* Title */}
         <h2 className="mt-4 text-2xl font-semibold text-gray-800">
@@ -21,7 +21,7 @@ const ErrorPage = () => {
         {/* Button */}
         <Link
           to="/"
-          className="inline-block mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
+          className="inline-block mt-6 px-6 py-3 bg-[#23BE0A] text-white rounded-lg shadow hover:bg-[#23BE0A]  transition"
         >
           Go Home
         </Link>

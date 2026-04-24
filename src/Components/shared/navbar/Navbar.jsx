@@ -1,20 +1,46 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
-
-  const links= <>
-  <li>
-    <Link to={'/'}>Home</Link>
-  </li>
-  <li>
-    <Link to={'/books'}>Listed Books</Link>
-  </li>
-  <li>
-    <Link to={'/page-to-read'}>Pages to Read</Link>
-  </li>
-  
-  
-  </>
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to={"/"}
+           className={({ isActive }) =>
+           ` font-semibold mr-4 ${ isActive
+              ? "text-[#23BE0A] border border-[#23BE0A] hover:bg-gray-50"
+              : "hover:text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:bg-gray-50"}`
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/books"}
+           className={({ isActive }) =>
+           ` font-semibold mr-4 ${ isActive
+              ? "text-[#23BE0A] border border-[#23BE0A] hover:bg-gray-50"
+              : "hover:text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:bg-gray-50"}`
+          }
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/page-to-read"}
+         className={({ isActive }) =>
+           ` font-semibold mr-4 ${ isActive
+              ? "text-[#23BE0A] border border-[#23BE0A] hover:bg-gray-50"
+              : "hover:text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:bg-gray-50"}`
+          }
+        >
+          Pages to Read
+        </NavLink>
+      </li>
+    </>
+  );
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -39,7 +65,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1  mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
@@ -47,12 +73,11 @@ const Navbar = () => {
         <h2 className="font-bold text-xl">Book Vibe</h2>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-4">
+        <button className="btn bg-[#23BE0A] text-white">Sign In</button>
+        <button className="btn bg-[#59C6D2] text-white">Sign In</button>
       </div>
     </div>
   );
