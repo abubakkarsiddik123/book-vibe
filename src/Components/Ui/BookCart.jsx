@@ -1,8 +1,9 @@
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router";
 
 const BookCart = ({book}) => {
     return (
-        <div className="card bg-base-100  shadow-sm">
+        <Link to={`bookDetails/${book.bookId}`} className="card bg-base-100  shadow-sm">
             <div className="p-6 ">
               <figure className="p-8 bg-[#F3F3F3] rounded-2xl">
               <img src={book.image} alt={book.bookName} className="rounded-lg h-[250px]" />
@@ -21,8 +22,8 @@ const BookCart = ({book}) => {
                 <div className="flex items-center gap-2 ">{book.rating} <CiStar /></div>
               </div>
             </div>
-          </div>
+          </Link>
     );
 };
 
-export default BookCart;
+export default BookCart; 
